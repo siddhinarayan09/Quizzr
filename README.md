@@ -64,11 +64,6 @@ The app uses Drizzle ORM with the following tables:
 Pull requests are welcome!  
 Please open an issue first for major changes or new feature discussions.
 
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
