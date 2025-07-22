@@ -32,6 +32,10 @@
   --chart-5: hsl(262, 83%, 58%);
 }
 
+body {
+  @apply font-sans;
+}
+
 .dark {
   --background: hsl(240, 10%, 3.9%);
   --foreground: hsl(0, 0%, 98%);

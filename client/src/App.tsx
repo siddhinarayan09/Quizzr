@@ -14,6 +14,7 @@ import StudentInterface from "@/pages/student-interface";
 import NotFound from "@/pages/not-found";
 import GoogleLoginButton from "@/components/GoogleLoginButton"
 import Profile from "@/pages/profile";
+import CreateRoomChooser from "./pages/create-option";
 
 type GoogleUser = {
   name: string;
@@ -33,7 +34,7 @@ function Header({user, setUser} : Props) {
 
 
   return (
-    <header className="bg-white/10 backdrop-blur-md shadow-sm border-b border-white/20 px-6 py-2 rounded-b-xl">
+    <header className="bg-[#EAE1FF] backdrop-blur-md shadow-sm border-b border-white/20 px-6 py-2 rounded-b-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
@@ -87,7 +88,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Landing} />
       <Route path = "/profile" component = {Profile}/>
-      <Route path="/create" component={CreateQuiz} />
+      <Route path="/create" component={CreateRoomChooser} />
+      <Route path="/create/quiz" component={CreateQuiz} />
       <Route path="/join" component={JoinQuiz} />
       <Route path="/presenter/:quizId">
         {(params) => <PresenterDashboard quizId={params.quizId} />}
@@ -115,9 +117,12 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="relative min-h-screen">
-  {/* Background gradient or image */}
-  <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dwh7xuupf/image/upload/v1752142804/Fundo_de_papel_de_parede_colorido_desfocado_v%C3%ADvido___Foto_Gr%C3%A1tis_toyiff.jpg')] bg-cover bg-center bg-no-repeat -z-10" />
-  <div className="absolute inset-0 bg-white/30 backdrop-blur-md -z-10" />
+ {/* Background base color */}
+<div className="absolute inset-0 bg-[#F5F5FD] -z-20" />
+
+{/* Glassmorphism overlay */}
+<div className="absolute inset-0 bg-white/30 backdrop-blur-md -z-10" />
+
 
   <Header user = {user} setUser = {setUser} />
   <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
